@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TROLL</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: radial-gradient(circle, #ffd1dc, #ff878d);
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            width: 280px;
+            max-width: 90%;
+            background-color: #ffffffcc;
+            border-radius: 20px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-8px);
+        }
+
+        .question {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff5470;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 5px rgba(255, 100, 100, 0.5);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .btn-yes {
+            background-color: #28a745;
+            color: white;
+            box-shadow: 0 5px 10px rgba(0, 255, 0, 0.3);
+        }
+
+        .btn-yes:active {
+            animation: pulse 0.5s ease;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .btn-no {
+            background-color: #ff3b3b;
+            color: white;
+            box-shadow: 0 5px 10px rgba(255, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .btn-no:hover {
+            background-color: #ff7373;
+        }
+
+        #message {
+            display: none;
+            margin-top: 25px;
+            font-size: 18px;
+            color: #333;
+            font-weight: bold;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="question">ARE YOU GAYY???</div>
+    <div class="button-container">
+        <button class="btn btn-yes" onclick="showMessage()">YES</button>
+        <button class="btn btn-no" onclick="moveButton()">NO</button>
+    </div>
+    <div id="message">I KNEW IT 😂😂😂</div>
+</div>
+
+<script>
+    let currentPosition = 0;
+
+    function moveButton() {
+        const btnNo = document.querySelector('.btn-no');
+        const positions = [
+            'translate(0, -80px)',   
+            'translate(-120px, -80px)', 
+            'translate(-120px, 0)',  
+            'translate(0, 0)'       
+        ];
+        
+        btnNo.style.transform = positions[currentPosition];
+        currentPosition = (currentPosition + 1) % positions.length; 
+    }
+
+    function showMessage() {
+        const messageDiv = document.getElementById('message');
+        messageDiv.style.display = "block";
+        messageDiv.style.animation = "fadeIn 1s forwards";
+        
+        setTimeout(() => {
+            window.open("https://youtu.be/L8XbI9aJOXk?si=30b3mPDh6Q70B-kS", "_blank");
+        }, 2000); 
+    }
+
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+    `;
+    document.head.appendChild(style);
+</script>
+
+</body>
+</html>
